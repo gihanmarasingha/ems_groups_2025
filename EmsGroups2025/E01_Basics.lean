@@ -68,9 +68,28 @@ example (h : a * b = c) : a * (b * a) = c * a :=
 The following proof is a bit more challenging!
 -/
 
-lemma mul_left_cancel  (h : a * b = a * c) : b = c :=
+lemma mul_left_cancel (h : a * b = a * c) : b = c :=
   calc
     b
-    _ = c              := by sorry
+    _ = c := by sorry
+
+/-
+The proof below proceed backward from the target to the hypothesis.
+-/
+
+example (h : ∀ (d : G), d * b = d) : b = 1 := by
+  apply mul_left_cancel
+  rw [mul_one]
+  rw [h b]
+
+/-
+Give a `calc`-style proof that does not use `mul_left_cancel`.
+-/
+
+example (h : ∀ (d : G), d * b = d) : b = 1 := by
+  calc
+    b
+    _ = 1 := by sorry
+
 
 end ems
