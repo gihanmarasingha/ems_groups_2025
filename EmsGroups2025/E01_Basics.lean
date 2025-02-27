@@ -1,6 +1,6 @@
 import Mathlib.Tactic
 
-variable (G : Type*) (a b c d : G) [Group G]
+variable {G : Type*} {a b c d : G} [Group G]
 
 example : a * 1 = a := by rw [mul_one a]
 example : 1 * a = a := by rw [one_mul a]
