@@ -10,10 +10,8 @@ example : a⁻¹ * a = 1 := by rw [inv_mul_cancel a]
 
 namespace ems
 
-open ems
-
-example (h : a * b = a * c) : b = c := by
-  apply mul_left_cancel  h
+lemma inv_inv : (a⁻¹)⁻¹ = a := by
+  sorry
 
 lemma mul_inv_self : b * b⁻¹ = 1 := by
   sorry
