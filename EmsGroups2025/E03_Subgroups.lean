@@ -1,16 +1,15 @@
 /-
 # Subgroups
 
-Let `G` be a group. A subset `H` of `G` is called a subgroup if it is nonempty
+Let `G` be a group. A subset `H` of `G` is called a subgroup if it is contains
+the identity element, is closed under multiplication and taking inverses.
 and closed under multiplication and taking inverses.
 
 Let `H` be a subgroup of `G`. Then we have
 
 `one_mem : (1 : G) ∈ H`
-`mul_mum:  a ∈ H → b ∈ H → a * b ∈ H`
+`mul_mem:  a ∈ H → b ∈ H → a * b ∈ H`
 `inv_mul : a ∈ H → a⁻¹ ∈ H`
-
-For example, suppose `G` is a group, and `H` is a subgroup of `G`.
 -/
 import Mathlib.Tactic
 
@@ -24,7 +23,6 @@ example : (1 : G) ∈ H := by
 
 example (h1 : a ∈ H) (h2 : b ∈ H) : a * b ∈ H := by
   exact H.mul_mem h1 h2
-
 
 example (h1 : a ∈ H) : a⁻¹ ∈ H := by
   exact H.inv_mem h1
