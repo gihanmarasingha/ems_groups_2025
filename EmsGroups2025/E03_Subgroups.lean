@@ -13,7 +13,6 @@ Let `H` be a subgroup of `G`. Then we have
 -/
 import Mathlib.Tactic
 
-
 variable {G : Type*} {a b c : G} [Group G]
 
 variable (H : Subgroup G)
@@ -52,11 +51,15 @@ namespace ems
 
 variable (K : Subgroup G)
 
+example (a b : G) : a * 1 = a := by
+  sorry
+
 /-
 The following result states that the intersection of two subgroups of `G` is a subgroup of `G`.
 -/
 instance : Min (Subgroup G) where
-  min := fun
+  min :=
+    fun
     | .mk H inv_mem' => fun
       | .mk K inv_mem' => {
         carrier := H.carrier ∩ K.carrier,
