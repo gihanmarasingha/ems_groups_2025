@@ -58,17 +58,14 @@ example (a b : G) : a * 1 = a := by
 The following result states that the intersection of two subgroups of `G` is a subgroup of `G`.
 -/
 instance : Min (Subgroup G) where
-  min :=
-    fun
-    | .mk H inv_mem' => fun
-      | .mk K inv_mem' => {
-        carrier := H.carrier ∩ K.carrier,
-        mul_mem' := by
-          sorry
-        one_mem' := by
-          sorry
-        inv_mem' := by
-          sorry
-      }
+  min H K := {
+    carrier := H.carrier ∩ K.carrier,
+    one_mem' := by
+      sorry
+    mul_mem' := by
+      sorry
+    inv_mem' := by
+      sorry
+  }
 
 end ems
