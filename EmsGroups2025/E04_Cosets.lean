@@ -18,5 +18,5 @@ example : (1 : G) • (H : Set G) = H := by
 
 example : a • (H : Set G) = b • H ↔ a⁻¹ * b ∈ H := by
   constructor
-  ·  sorry
+  · sorry
   · sorry

@@ -9,7 +9,7 @@ Let `H` be a subgroup of `G`. Then we have
 
 `one_mem : (1 : G) ∈ H`
 `mul_mem:  a ∈ H → b ∈ H → a * b ∈ H`
-`inv_mul : a ∈ H → a⁻¹ ∈ H`
+`inv_mem : a ∈ H → a⁻¹ ∈ H`
 -/
 import Mathlib.Tactic
 
